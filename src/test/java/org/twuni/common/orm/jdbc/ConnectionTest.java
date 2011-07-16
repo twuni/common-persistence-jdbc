@@ -8,13 +8,13 @@ public class ConnectionTest {
 	@Test
 	public void testConnection() {
 
-		ConnectionPool pool = new ConnectionPool( 1, "jdbc:hsqldb:file:data/test", "SA", "" );
+		ConnectionPool pool = new ConnectionPool( 1, "jdbc:hsqldb:mem:test", "SA", "" );
 
 		pool.run( new Behavior() {
 
 			@Override
 			public void perform( Messenger messenger ) {
-				Message<?> message = messenger.createMessage( "CREATE TABLE Test ( id int not null, content varchar(255), primary key (id) );" );
+				Message<?> message = messenger.createMessage( "CREATE TABLE test ( id int not null, content varchar(255), primary key (id) );" );
 				message.execute();
 			}
 

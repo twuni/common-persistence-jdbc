@@ -2,15 +2,10 @@ package org.twuni.common.orm.jdbc;
 
 import java.sql.SQLException;
 
+import org.twuni.common.orm.Behavior;
 import org.twuni.common.orm.jdbc.exception.RollbackException;
 
-public class Transaction implements Runnable {
-
-	public static interface Behavior {
-
-		public void perform( Session session );
-
-	}
+class Transaction implements Runnable {
 
 	private final java.sql.Connection connection;
 	private final Behavior behavior;

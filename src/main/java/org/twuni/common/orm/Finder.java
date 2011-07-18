@@ -2,7 +2,7 @@ package org.twuni.common.orm;
 
 import java.util.List;
 
-public interface Locates<T> {
+public interface Finder<T> {
 
 	public List<T> list( int limit );
 

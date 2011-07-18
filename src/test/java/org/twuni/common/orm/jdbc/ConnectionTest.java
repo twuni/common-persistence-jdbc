@@ -1,9 +1,9 @@
 package org.twuni.common.orm.jdbc;
 
 import org.junit.Test;
+import org.twuni.common.orm.Behavior;
 import org.twuni.common.orm.Parameterized;
 import org.twuni.common.orm.Parameters;
-import org.twuni.common.orm.jdbc.Transaction.Behavior;
 
 public class ConnectionTest {
 
@@ -15,7 +15,7 @@ public class ConnectionTest {
 		connection.run( new Behavior() {
 
 			@Override
-			public void perform( Session session ) {
+			public void perform( org.twuni.common.orm.Session session ) {
 
 				session.query( "CREATE TABLE person ( first_name varchar(128), last_name varchar(128) );" );
 				session.query( "INSERT INTO person ( first_name, last_name ) VALUES ( ?, ? );", new Parameters() {

@@ -5,10 +5,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.twuni.common.orm.jdbc.Transaction.Behavior;
+import org.twuni.common.orm.Behavior;
 import org.twuni.common.orm.jdbc.exception.ConnectionLimitExceededException;
 
-public class Connection {
+public class Connection implements org.twuni.common.orm.Connection {
 
 	private static final int DEFAULT_POOL_SIZE = 10;
 

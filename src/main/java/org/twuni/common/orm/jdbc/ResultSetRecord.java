@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.twuni.common.orm.Record;
 
-public class ResultSetRecord implements Record {
+class ResultSetRecord implements Record {
 
 	private final ResultSet results;
 

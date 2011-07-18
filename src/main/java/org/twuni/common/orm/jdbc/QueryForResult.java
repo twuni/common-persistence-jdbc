@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.twuni.common.Adapter;
-import org.twuni.common.orm.Locates;
+import org.twuni.common.orm.Finder;
 import org.twuni.common.orm.Record;
 import org.twuni.common.orm.jdbc.exception.NonUniqueObjectException;
 import org.twuni.common.orm.jdbc.exception.ObjectNotFoundException;
 
-public class QueryForResult<T> extends Query implements Locates<T> {
+class QueryForResult<T> extends Query implements Finder<T> {
 
 	private final Adapter<Record, T> adapter;
 

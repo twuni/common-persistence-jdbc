@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import org.twuni.common.orm.Parameterized;
 
-public class Query implements Parameterized, Runnable {
+class Query implements Parameterized, Runnable {
 
 	protected final PreparedStatement statement;
 

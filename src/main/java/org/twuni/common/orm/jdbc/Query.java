@@ -1,24 +1,16 @@
 package org.twuni.common.orm.jdbc;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.twuni.common.Adapter;
-import org.twuni.common.orm.Record;
-import org.twuni.common.orm.jdbc.exception.NonUniqueObjectException;
-import org.twuni.common.orm.jdbc.exception.ObjectNotFoundException;
+import org.twuni.common.orm.Parameterized;
 
-public class Message<T> implements org.twuni.common.orm.Message<T> {
+public class Query implements Parameterized, Runnable {
 
 	protected final PreparedStatement statement;
-	private final Adapter<Record, T> adapter;
 
-	public Message( PreparedStatement statement, Adapter<Record, T> adapter ) {
+	public Query( PreparedStatement statement ) {
 		this.statement = statement;
-		this.adapter = adapter;
 	}
 
 	@Override
@@ -85,64 +77,12 @@ public class Message<T> implements org.twuni.common.orm.Message<T> {
 	}
 
 	@Override
-	public final void execute() {
+	public final void run() {
 		try {
 			statement.execute();
 		} catch( SQLException exception ) {
 			throw new RuntimeException( exception );
 		}
-	}
-
-	@Override
-	public final List<T> list( int limit ) {
-
-		try {
-			statement.setMaxRows( limit );
-		} catch( SQLException exception ) {
-			throw new RuntimeException( exception );
-		}
-
-		return list();
-
-	}
-
-	@Override
-	public final List<T> list() {
-
-		try {
-
-			execute();
-
-			ResultSet results = statement.getResultSet();
-			List<T> list = new ArrayList<T>();
-			Record record = new ResultSetRecord( results );
-
-			while( results.next() ) {
-				list.add( adapter.adapt( record ) );
-			}
-
-			return list;
-
-		} catch( SQLException exception ) {
-			throw new RuntimeException( exception );
-		}
-
-	}
-
-	@Override
-	public final T unique() {
-
-		List<T> results = list( 2 );
-
-		switch( results.size() ) {
-			case 0:
-				throw new ObjectNotFoundException();
-			case 1:
-				return results.get( 0 );
-			default:
-				throw new NonUniqueObjectException();
-		}
-
 	}
 
 }

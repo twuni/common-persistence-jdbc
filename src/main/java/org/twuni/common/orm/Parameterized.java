@@ -1,8 +1,6 @@
 package org.twuni.common.orm;
 
-import java.util.List;
-
-public interface Message<T> {
+public interface Parameterized {
 
 	public void setParameter( int index, String value );
 
@@ -18,11 +16,4 @@ public interface Message<T> {
 
 	public void setParameter( int index, short value );
 
-	public void execute();
-
-	public List<T> list( int limit );
-
-	public List<T> list();
-
-	public T unique();
 }

@@ -8,7 +8,9 @@ import java.util.List;
 import org.twuni.common.orm.jdbc.Transaction.Behavior;
 import org.twuni.common.orm.jdbc.exception.ConnectionLimitExceededException;
 
-public class ConnectionPool {
+public class Connection {
+
+	private static final int DEFAULT_POOL_SIZE = 10;
 
 	private final List<java.sql.Connection> connections;
 	private final int connectionLimit;
@@ -18,7 +20,18 @@ public class ConnectionPool {
 
 	private int numberOfConnections;
 
-	public ConnectionPool( int size, String url, String username, String password ) {
+	/**
+	 * Creates a new database connection pool that will contain a maximum of
+	 * {@link #DEFAULT_POOL_SIZE} connections.
+	 * 
+	 * @param url
+	 *            The JDBC URL for the database connection.
+	 */
+	public Connection( String url, String username, String password ) {
+		this( url, username, password, DEFAULT_POOL_SIZE );
+	}
+
+	public Connection( String url, String username, String password, int size ) {
 		this.connections = new ArrayList<java.sql.Connection>( size );
 		this.numberOfConnections = 0;
 		this.connectionLimit = size;

@@ -8,7 +8,7 @@ public class Transaction implements Runnable {
 
 	public static interface Behavior {
 
-		public void perform( Messenger messenger );
+		public void perform( Session session );
 
 	}
 
@@ -23,7 +23,8 @@ public class Transaction implements Runnable {
 	@Override
 	public void run() {
 		try {
-			behavior.perform( new Messenger( connection ) );
+			Session session = new Session( connection );
+			behavior.perform( session );
 			connection.commit();
 		} catch( Exception exception ) {
 			tryRollback( exception );

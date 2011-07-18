@@ -36,7 +36,7 @@ public class Session {
 		return createQuery( sql, adapter ).list();
 	}
 
-	private Query createQuery( String sql ) {
+	public Query createQuery( String sql ) {
 		try {
 			PreparedStatement statement = connection.prepareStatement( sql );
 			return new Query( statement );
@@ -45,7 +45,7 @@ public class Session {
 		}
 	}
 
-	private <T> QueryForResult<T> createQuery( String sql, Adapter<Record, T> adapter ) {
+	public <T> QueryForResult<T> createQuery( String sql, Adapter<Record, T> adapter ) {
 		try {
 			PreparedStatement statement = connection.prepareStatement( sql );
 			return new QueryForResult<T>( statement, adapter );

@@ -3,7 +3,7 @@ package org.twuni.common.orm.jdbc;
 import java.sql.SQLException;
 
 import org.twuni.common.orm.Behavior;
-import org.twuni.common.orm.jdbc.exception.RollbackException;
+import org.twuni.common.orm.exception.RollbackException;
 
 class Transaction implements Runnable {
 

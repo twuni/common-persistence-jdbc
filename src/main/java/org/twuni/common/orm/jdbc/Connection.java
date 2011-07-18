@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.twuni.common.orm.Behavior;
-import org.twuni.common.orm.jdbc.exception.ConnectionLimitExceededException;
+import org.twuni.common.orm.exception.ConnectionLimitExceededException;
 
 public class Connection implements org.twuni.common.orm.Connection {
 

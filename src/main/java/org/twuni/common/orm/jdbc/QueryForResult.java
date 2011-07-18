@@ -9,8 +9,8 @@ import java.util.List;
 import org.twuni.common.Adapter;
 import org.twuni.common.orm.Finder;
 import org.twuni.common.orm.Record;
-import org.twuni.common.orm.jdbc.exception.NonUniqueObjectException;
-import org.twuni.common.orm.jdbc.exception.ObjectNotFoundException;
+import org.twuni.common.orm.exception.NonUniqueObjectException;
+import org.twuni.common.orm.exception.ObjectNotFoundException;
 
 class QueryForResult<T> extends Query implements Finder<T> {
 

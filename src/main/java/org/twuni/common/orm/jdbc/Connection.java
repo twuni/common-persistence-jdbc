@@ -40,6 +40,10 @@ public class Connection implements org.twuni.common.orm.Connection {
 		this.password = password;
 	}
 
+	/**
+	 * Runs the given behavior, rolling back any database changes if an uncaught exception occurs.
+	 */
+	@Override
 	public void run( Behavior behavior ) {
 
 		if( connections.isEmpty() ) {

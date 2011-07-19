@@ -32,7 +32,13 @@ class Transaction implements Runnable {
 		} catch( SQLException exception ) {
 			throw new RollbackException( exception );
 		}
+
+		if( throwable instanceof RuntimeException ) {
+			throw (RuntimeException) throwable;
+		}
+
 		throw new RuntimeException( throwable );
+
 	}
 
 }

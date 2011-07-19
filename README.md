@@ -8,7 +8,7 @@ HSQL database. It then runs an SQL query that creates the `person` table.
 
 	Connection connection = new Connection( "jdbc:hsqldb:mem:test", "SA", "" );
 	
-	connection.run( new Behavior() {
+	connection.run( new Transaction() {
 	
 		@Override
 		public void perform( Session session ) {

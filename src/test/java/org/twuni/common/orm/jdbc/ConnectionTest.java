@@ -1,7 +1,7 @@
 package org.twuni.common.orm.jdbc;
 
 import org.junit.Test;
-import org.twuni.common.orm.Behavior;
+import org.twuni.common.orm.Transaction;
 import org.twuni.common.orm.Parameterized;
 import org.twuni.common.orm.Parameters;
 
@@ -12,7 +12,7 @@ public class ConnectionTest {
 
 		Connection connection = new Connection( "jdbc:hsqldb:mem:test", "SA", "" );
 
-		connection.run( new Behavior() {
+		connection.run( new Transaction() {
 
 			@Override
 			public void perform( org.twuni.common.orm.Session session ) {

@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.twuni.common.orm.Behavior;
 import org.twuni.common.orm.exception.ConnectionLimitExceededException;
 
 public class Connection implements org.twuni.common.orm.Connection {
@@ -44,7 +43,7 @@ public class Connection implements org.twuni.common.orm.Connection {
 	 * Runs the given behavior, rolling back any database changes if an uncaught exception occurs.
 	 */
 	@Override
-	public void run( Behavior behavior ) {
+	public void run( org.twuni.common.orm.Transaction transaction ) {
 
 		if( connections.isEmpty() ) {
 			if( numberOfConnections >= connectionLimit ) {
@@ -55,7 +54,7 @@ public class Connection implements org.twuni.common.orm.Connection {
 
 		java.sql.Connection connection = connections.remove( 0 );
 		try {
-			new Transaction( connection, behavior ).run();
+			new Transaction( connection, transaction ).run();
 		} finally {
 			connections.add( connection );
 		}

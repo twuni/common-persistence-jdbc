@@ -64,7 +64,7 @@ class QueryForResult<T> extends Query implements Finder<T> {
 
 		switch( results.size() ) {
 			case 0:
-				throw new ObjectNotFoundException();
+				throw new ObjectNotFoundException( statement );
 			case 1:
 				return results.get( 0 );
 			default:

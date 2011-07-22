@@ -18,8 +18,8 @@
 	<description>This ORM implementation uses JDBC for its underlying database operations.</description>
 
 	<scm>
-		<developerConnection>scm:git:ssh:git@github.com:twuni/common-orm-jdbc.git</developerConnection>
-		<connection>scm:git:ssh:git@github.com:twuni/common-orm-jdbc.git</connection>
+		<developerConnection>scm:git:git@github.com:twuni/common-orm-jdbc.git</developerConnection>
+		<connection>scm:git:git@github.com:twuni/common-orm-jdbc.git</connection>
 		<url>scm:git:https://twuni@github.com/twuni/common-orm-jdbc.git</url>
 	</scm>
 
@@ -100,13 +100,13 @@
 		<dependency>
 			<groupId>org.twuni</groupId>
 			<artifactId>common</artifactId>
-			<version>0.1.0-SNAPSHOT</version>
+			<version>0.1.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.twuni</groupId>
 			<artifactId>common-orm</artifactId>
-			<version>0.1.0-SNAPSHOT</version>
+			<version>0.1.0</version>
 		</dependency>
 
 	</dependencies>

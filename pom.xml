@@ -10,17 +10,17 @@
 	</parent>
 
 	<groupId>org.twuni</groupId>
-	<artifactId>common-orm-jdbc</artifactId>
+	<artifactId>common-persistence-jdbc</artifactId>
 	<version>0.1.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Object-Relational Mapping for JDBC</name>
-	<description>This ORM implementation uses JDBC for its underlying database operations.</description>
+	<name>Persistence Layer for JDBC</name>
+	<description>This persistence layer implementation uses JDBC for its underlying database operations.</description>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:twuni/common-orm-jdbc.git</developerConnection>
-		<connection>scm:git:git@github.com:twuni/common-orm-jdbc.git</connection>
-		<url>scm:git:https://twuni@github.com/twuni/common-orm-jdbc.git</url>
+		<developerConnection>scm:git:git@github.com:twuni/common-persistence-jdbc.git</developerConnection>
+		<connection>scm:git:git@github.com:twuni/common-persistence-jdbc.git</connection>
+		<url>scm:git:https://twuni@github.com/twuni/common-persistence-jdbc.git</url>
 	</scm>
 
 	<developers>
@@ -105,8 +105,8 @@
 
 		<dependency>
 			<groupId>org.twuni</groupId>
-			<artifactId>common-orm</artifactId>
-			<version>0.1.0</version>
+			<artifactId>common-persistence</artifactId>
+			<version>0.1.1-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>

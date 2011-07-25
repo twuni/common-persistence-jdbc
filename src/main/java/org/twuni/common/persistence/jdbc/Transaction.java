@@ -1,15 +1,15 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.SQLException;
 
-import org.twuni.common.orm.exception.RollbackException;
+import org.twuni.common.persistence.exception.RollbackException;
 
 class Transaction implements Runnable {
 
 	private final java.sql.Connection connection;
-	private final org.twuni.common.orm.Transaction transaction;
+	private final org.twuni.common.persistence.Transaction transaction;
 
-	public Transaction( java.sql.Connection connection, org.twuni.common.orm.Transaction transaction ) {
+	public Transaction( java.sql.Connection connection, org.twuni.common.persistence.Transaction transaction ) {
 		this.connection = connection;
 		this.transaction = transaction;
 	}

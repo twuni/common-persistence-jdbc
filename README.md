@@ -1,4 +1,4 @@
-This library supports object-relational mapping via JDBC.
+This library supports object persistence via JDBC.
 
 Sample Code
 -----------

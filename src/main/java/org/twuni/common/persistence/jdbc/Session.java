@@ -1,14 +1,14 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
 import org.twuni.common.Adapter;
-import org.twuni.common.orm.Parameters;
-import org.twuni.common.orm.Record;
+import org.twuni.common.persistence.Parameters;
+import org.twuni.common.persistence.Record;
 
-class Session implements org.twuni.common.orm.Session {
+class Session implements org.twuni.common.persistence.Session {
 
 	private final java.sql.Connection connection;
 

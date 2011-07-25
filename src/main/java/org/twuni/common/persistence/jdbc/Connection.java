@@ -1,13 +1,13 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.twuni.common.orm.exception.ConnectionLimitExceededException;
+import org.twuni.common.persistence.exception.ConnectionLimitExceededException;
 
-public class Connection implements org.twuni.common.orm.Connection {
+public class Connection implements org.twuni.common.persistence.Connection {
 
 	private static final int DEFAULT_POOL_SIZE = 10;
 
@@ -43,7 +43,7 @@ public class Connection implements org.twuni.common.orm.Connection {
 	 * Runs the given behavior, rolling back any database changes if an uncaught exception occurs.
 	 */
 	@Override
-	public void run( org.twuni.common.orm.Transaction transaction ) {
+	public void run( org.twuni.common.persistence.Transaction transaction ) {
 
 		if( connections.isEmpty() ) {
 			if( numberOfConnections >= connectionLimit ) {

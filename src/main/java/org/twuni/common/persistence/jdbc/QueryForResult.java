@@ -1,4 +1,4 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.twuni.common.Adapter;
-import org.twuni.common.orm.Finder;
-import org.twuni.common.orm.Record;
-import org.twuni.common.orm.exception.NonUniqueObjectException;
-import org.twuni.common.orm.exception.ObjectNotFoundException;
+import org.twuni.common.persistence.Finder;
+import org.twuni.common.persistence.Record;
+import org.twuni.common.persistence.exception.NonUniqueObjectException;
+import org.twuni.common.persistence.exception.ObjectNotFoundException;
 
 class QueryForResult<T> extends Query implements Finder<T> {
 

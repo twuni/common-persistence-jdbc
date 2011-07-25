@@ -1,9 +1,9 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.twuni.common.orm.Parameterized;
+import org.twuni.common.persistence.Parameterized;
 
 class Query implements Parameterized, Runnable {
 

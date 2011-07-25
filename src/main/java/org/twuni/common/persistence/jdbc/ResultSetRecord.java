@@ -1,9 +1,9 @@
-package org.twuni.common.orm.jdbc;
+package org.twuni.common.persistence.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.twuni.common.orm.Record;
+import org.twuni.common.persistence.Record;
 
 class ResultSetRecord implements Record {
 
